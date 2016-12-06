@@ -3,9 +3,9 @@ package com.betterorjacks;
 import java.util.*;
 
 public class Deck {
-    private static int topCard = 0;
-    private List<Card> cards = new ArrayList(52);
-    private LinkedList<Card> hand = new LinkedList();
+    private int topCard = 0;
+    private List<Card> cards = new ArrayList<>(52);
+    private LinkedList<Card> hand = new LinkedList<>();
     private Combination combination;
 
     public Deck() {
@@ -41,11 +41,10 @@ public class Deck {
     }
 
     public void getSecondHand(String hold) {
-        for (int i = 0; i < hold.length(); i++) {
-            if (!String.valueOf(hold.charAt(i)).equals("1") && !String.valueOf(hold.charAt(i)).equals("0")) {
-                System.out.println("Illegal input!");
-                break;
-            }
+
+        if (!hold.matches("[0-1]{5}")){
+            System.out.println("Illegal input!");
+            System.exit(0);
         }
 
         int count = 0;
