@@ -17,10 +17,6 @@ public class Deck {
         }
     }
 
-    private void shuffle() {
-        Collections.shuffle(cards);
-    }
-
     private void draw() {
         Card card = cards.get(topCard);
         hand.add(card);
@@ -28,7 +24,7 @@ public class Deck {
     }
 
     public void getHand() {
-        shuffle();
+        Collections.shuffle(cards);
 
         for (int i = 0; i < 5; ++i) {
             draw();

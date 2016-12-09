@@ -58,10 +58,10 @@ public class Evaluator {
         int royalFlushCounter = 0;
         ArrayList royalFlush = new ArrayList(Arrays.asList(Rank.TEN, Rank.JACK, Rank.QUEEN, Rank.KING, Rank.ACE));
         for (Rank rank : ranks){
-            royalFlushCounter++;
             if (!(royalFlush.contains(rank))){
                 break;
             }
+            royalFlushCounter++;
         }
         return royalFlushCounter == 5;
     }
